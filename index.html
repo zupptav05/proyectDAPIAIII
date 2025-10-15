@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrito de Compras</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+    .menu {
+      display: flex;
+      gap: 10px;
+    }
+    .menu button {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .menu button:hover {
+      background: #2980b9;
+    }
+
+    .contenedor {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .producto {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 250px;
+      padding: 15px;
+      text-align: center;
+    }
+    .producto img {
+      width: 100%;
+      border-radius: 8px;
+      height: 160px;
+      object-fit: cover;
+    }
+    .producto h3 {
+      margin: 10px 0 5px;
+    }
+    .producto button {
+      background: #27ae60;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    #carrito, #ticket {
+      background: white;
+      margin: 20px auto;
+      width: 80%;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    #carrito h2, #ticket h2 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border-bottom: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .acciones {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .acciones button {
+      background: #3498db;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .acciones button:hover {
+      background: #2980b9;
+    }
+
+    #auth {
+      background: #ecf0f1;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      margin: 20px auto;
+      width: 300px;
+    }
+
+    input {
+      width: 90%;
+      padding: 8px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #menuCategorias {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 8px;
+      margin: 10px auto;
+      text-align: center;
+    }
+
+    select {
+      padding: 6px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    #comprarBtn {
+      display: block;
+      background: #e67e22;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      margin: 10px auto;
+      cursor: pointer;
+    }
+
+    #comprarBtn:hover {
+      background: #d35400;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🛒 Tienda Tech</h1>
+    <div class="menu">
+      <button onclick="mostrarLogin()">Login</button>
+      <button onclick="mostrarRegistro()">Registro</button>
+    </div>
+  </header>
+
+  <div id="auth"></div>
+
+  <div id="menuCategorias">
+    <label for="categoriaSelect">Categoría:</label>
+    <select id="categoriaSelect" onchange="filtrarCategoria()">
+      <option value="todos">Todos</option>
+      <option value="auriculares">Auriculares</option>
+      <option value="laptops">Laptops</option>
+      <option value="accesorios">Accesorios</option>
+    </select>
+  </div>
+
+  <div id="catalogo" class="contenedor"></div>
+
+  <div id="carrito">
+    <h2>Carrito de Compras</h2>
+    <table id="tablaCarrito"></table>
+    <h3 id="total"></h3>
+    <button id="comprarBtn" onclick="comprar()">Comprar</button>
+  </div>
+
+  <div id="ticket" style="display:none;">
+    <h2>🧾 Ticket de Compra</h2>
+    <div id="ticketContenido"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

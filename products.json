@@ -1,0 +1,7 @@
+[
+  { "id": 1, "nombre": "Auriculares inalámbricos", "descripcion": "Bluetooth 5.2, cancelación de ruido", "precio": 49.99, "imagen": "https://via.placeholder.com/150?text=Auriculares" },
+  { "id": 2, "nombre": "Smartwatch Pro", "descripcion": "Monitor ritmo cardíaco, 7 días batería", "precio": 129.50, "imagen": "https://via.placeholder.com/150?text=Smartwatch" },
+  { "id": 3, "nombre": "Cargador USB-C 65W", "descripcion": "Carga rápida, compacto", "precio": 29.9, "imagen": "https://via.placeholder.com/150?text=Cargador" },
+  { "id": 4, "nombre": "Altavoz portátil", "descripcion": "Waterproof, 12h reproducción", "precio": 59.0, "imagen": "https://via.placeholder.com/150?text=Altavoz" },
+  { "id": 5, "nombre": "Mouse ergonómico", "descripcion": "Inalámbrico, DPI ajustable", "precio": 24.75, "imagen": "https://via.placeholder.com/150?text=Mouse" }
+]
